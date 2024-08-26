@@ -2,7 +2,7 @@
 
 1. Open PowerShell.
 
-2. Navigate to the directory where your `Change-Directory.ps1` script is saved using the `cd` command.
+2. Navigate to the directory where your `ChangeDirectory.ps1` script is saved using the `cd` command.
 
 3. Execute the script by typing:
 
