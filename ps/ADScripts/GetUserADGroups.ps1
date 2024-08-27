@@ -17,6 +17,7 @@
     Retrieves the group memberships for the user 'harag22'.
 
 #>
+Import-Module ActiveDirectory
 
 param (
     [string]$UserIdentity = 'harag22'  # Default user identity
