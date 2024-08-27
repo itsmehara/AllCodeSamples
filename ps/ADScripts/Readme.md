@@ -16,6 +16,12 @@ Sales
 Marketing
 ```
 
+You need to import the Active Directory module. Use the following command:
+
+```powershell
+Import-Module ActiveDirectory
+```
+
 
 The one-line PowerShell command and a `.ps1` script file with detailed comments and proper indentation. 
 
