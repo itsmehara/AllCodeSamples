@@ -150,3 +150,20 @@ $user = Get-ADUser -Identity harag22 -Properties MemberOf
 $user.MemberOf | ForEach-Object { $_ -replace '^CN=.*?,', '' }
 ```
 
+Here’s the revised two-liner command that excludes the `CN=` part and retains only the group names:
+
+```powershell
+Import-Module ActiveDirectory
+$user = Get-ADUser -Identity harag22 -Properties MemberOf
+$user.MemberOf | ForEach-Object { $_ -replace '^CN=([^,]+).+', '$1' }
+```
+
+### Explanation of the Updated Regex:
+- **`^CN=`**: Matches the start of the string with `CN=`.
+- **`([^,]+)`**: Captures one or more characters that are not commas (this is the group name).
+- **`.+`**: Matches the rest of the string after the group name.
+- **`'$1'`**: Replaces the entire string with just the captured group name.
+
+This will effectively extract and display only the group names.
+
+
