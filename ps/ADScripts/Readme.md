@@ -100,3 +100,47 @@ $user.MemberOf | ForEach-Object {
   ```
 
 You can now use both the one-liner command and the `.ps1` script for retrieving Active Directory user group memberships as needed!
+
+----------------------
+
+## SAMPLE 2
+
+
+### PowerShell Script:
+
+```powershell
+# Filename: Get-UserADGroups.ps1
+
+param (
+    [string]$UserIdentity = 'harag22'  # Default user identity
+)
+
+if (-not (Get-Module -Name ActiveDirectory)) {
+    Import-Module ActiveDirectory
+}
+
+$user = Get-ADUser -Identity $UserIdentity -Properties MemberOf
+
+if ($null -eq $user) {
+    Write-Error "User with identity '$UserIdentity' not found."
+    exit 1
+}
+
+$user.MemberOf | ForEach-Object {
+    $_ -replace '^CN=.*?,', ''
+}
+```
+
+### One-Liner Command:
+
+```powershell
+Get-ADUser -Identity harag22 -Properties MemberOf | Select-Object -ExpandProperty MemberOf | ForEach-Object { $_ -replace '^CN=.*?,', '' }
+```
+
+### Two-Liner Command:
+
+```powershell
+$user = Get-ADUser -Identity harag22 -Properties MemberOf
+$user.MemberOf | ForEach-Object { $_ -replace '^CN=.*?,', '' }
+```
+
