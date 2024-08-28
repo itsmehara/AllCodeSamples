@@ -30,6 +30,7 @@ The one-line PowerShell command and a `.ps1` script file with detailed comments 
 Here's the one-liner PowerShell command that retrieves the groups that the user `harag22` is a member of:
 
 ```powershell
+Import-Module ActiveDirectory
 Get-ADUser -Identity harag22 -Properties MemberOf | Select-Object -ExpandProperty MemberOf
 ```
 
@@ -39,7 +40,7 @@ Below is a PowerShell script file that performs the same task. Save this script 
 
 ```powershell
 # Filename: Get-UserGroups.ps1
-
+Import-Module ActiveDirectory
 <#
 .SYNOPSIS
     Retrieves the Active Directory groups that a specific user is a member of.
@@ -116,6 +117,7 @@ You can now use both the one-liner command and the `.ps1` script for retrieving 
 
 ```powershell
 # Filename: Get-UserADGroups.ps1
+Import-Module ActiveDirectory
 
 param (
     [string]$UserIdentity = 'harag22'  # Default user identity
