@@ -142,12 +142,16 @@ $user.MemberOf | ForEach-Object {
 ### One-Liner Command:
 
 ```powershell
+Import-Module ActiveDirectory
+
 Get-ADUser -Identity harag22 -Properties MemberOf | Select-Object -ExpandProperty MemberOf | ForEach-Object { $_ -replace '^CN=.*?,', '' }
 ```
 
 ### Two-Liner Command:
 
 ```powershell
+Import-Module ActiveDirectory
+
 $user = Get-ADUser -Identity harag22 -Properties MemberOf
 $user.MemberOf | ForEach-Object { $_ -replace '^CN=.*?,', '' }
 ```
@@ -156,6 +160,7 @@ Here’s the revised two-liner command that excludes the `CN=` part and retains 
 
 ```powershell
 Import-Module ActiveDirectory
+
 $user = Get-ADUser -Identity harag22 -Properties MemberOf
 $user.MemberOf | ForEach-Object { $_ -replace '^CN=([^,]+).+', '$1' }
 ```
