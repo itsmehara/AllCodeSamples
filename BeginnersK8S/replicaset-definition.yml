@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+
+
+spec:
+  template:
+
+  replicas: 3
