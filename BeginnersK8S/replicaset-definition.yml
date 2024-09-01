@@ -9,7 +9,10 @@ metadata:
 spec:
   template:
     metadata:
-      name: pod
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
     spec:
       containers:
         - name: nginx
