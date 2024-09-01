@@ -15,7 +15,7 @@ spec:
         type: front-end
     spec:
       containers:
-        - name: nginx
+        - name: nginx-container
           image: nginx
   replicas: 3
   selectors: 
