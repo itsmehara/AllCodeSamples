@@ -17,3 +17,10 @@ spec:
         - name: nginx-container
           image: nginx
   replicas: 3
+
+# to create "kubectl create -f rc-definition.yml"
+# to verify "kubectl get replicacontroller"
+# to check pods "kubectl get pods"
+
+
+  
