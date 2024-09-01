@@ -19,3 +19,9 @@ spec:
           image: nginx
   replicas: 3
   selectors: 
+    matchlabels:
+      type: front-end
+
+# kubectl create -r replicaset-definition.yml # creating replicaset
+
+    
