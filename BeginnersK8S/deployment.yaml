@@ -1,1 +1,17 @@
+# the file is not validated. yet to finish. and fix it.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Deployment
+  labels:
+    
 
+spec:
+  replicas: 2  
+  template:
+    metadata:
+      labels:
+    spec:
+      container:
+        type: nginx
+        image: nginx
