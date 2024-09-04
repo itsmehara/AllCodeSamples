@@ -8,3 +8,7 @@ spec:
     - targetport: 80
       port: 80
       nodeport: 30008
+  selector:
+    # PODs label's section
+    app: myapp
+    type: frontend
