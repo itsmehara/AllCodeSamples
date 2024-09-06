@@ -4,7 +4,7 @@ kind: Pod
 metadata:
   name: myapp-pod
   labels:
-  
+    type: frontend
 spec:
   containers:
     - name: nginx
