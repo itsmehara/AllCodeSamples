@@ -4,6 +4,8 @@ metadata:
   name: myapp-service
 spec:
   type: NodePort
+  # type of services.
+  # type can be NodePort, or ClustIp, or LoadBalancer
   ports:
     - targetport: 80
       port: 80
