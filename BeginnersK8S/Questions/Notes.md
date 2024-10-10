@@ -1,3 +1,4 @@
+```
 
 
 
@@ -31,8 +32,7 @@
 
 
 
-
-
+```
 ---
 
 ### 1. **How do you handle service discovery and load balancing in Kubernetes?**
